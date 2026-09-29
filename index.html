@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Aniversario, Mi Amor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=10">
+</head>
+<body>
+  <div class="parallax-bg"></div>
+  <div class="overlay"></div>
+
+  <section id="lock-screen" class="lock-screen">
+    <div class="title">
+      <h1>Feliz Aniversario, Mi Amor!</h1>
+    </div>
+
+    <div class="container">
+      <div class="main-content">
+        <div class="image-container no-photo" id="image-container">
+          <img
+            id="cover-image"
+            src="fotos/1.png"
+            alt="Nuestra foto"
+            class="cover-image"
+          >
+          <div class="photo-placeholder" id="photo-placeholder">
+            <span>Cuando me pases la foto</span>
+            <code>images/cover.jpg</code>
+          </div>
+        </div>
+
+        <div class="password-section">
+          <p class="password-hint">Ingresa la contraseña</p>
+          <p class="hint">Pista: nuestro Aniversario</p>
+          <div class="password-display" id="password-display" aria-live="polite"></div>
+          <div class="error" id="error">Contraseña incorrecta, intenta de nuevo.</div>
+          <div class="keyboard" role="region" aria-label="Teclado numérico">
+            <button type="button" class="key" data-digit="1">1</button>
+            <button type="button" class="key" data-digit="2">2</button>
+            <button type="button" class="key" data-digit="3">3</button>
+            <button type="button" class="key" data-digit="4">4</button>
+            <button type="button" class="key" data-digit="5">5</button>
+            <button type="button" class="key" data-digit="6">6</button>
+            <button type="button" class="key" data-digit="7">7</button>
+            <button type="button" class="key" data-digit="8">8</button>
+            <button type="button" class="key" data-digit="9">9</button>
+            <button type="button" class="key delete-key" data-action="delete" aria-label="Borrar">⌫</button>
+            <button type="button" class="key" data-digit="0">0</button>
+            <span class="key spacer" aria-hidden="true"></span>
+            <button type="button" class="key enter-key" data-action="enter">Entrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audio de fondo -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="musica/el libro de la vida (te amo y más).mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="music-player-widget" id="music-player" hidden>
+    <button type="button" class="music-toggle" id="music-toggle" aria-label="Reproducir o pausar música">
+      <span class="music-icon" id="music-icon">♫</span>
+    </button>
+    <div class="volume-container" id="volume-container">
+      <span class="volume-icon" id="volume-icon" title="Silenciar / Activar">🔊</span>
+      <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01" value="0.7" aria-label="Regulador de volumen">
+    </div>
+  </div>
+
+  <section id="unlocked" class="unlocked" hidden aria-hidden="true">
+    <div class="credits" id="credits">
+      <div class="credits-vignette" aria-hidden="true"></div>
+      <div class="credits-track" id="credits-track">
+        <p class="credits-kicker">29 · 08</p>
+        <h2 class="credits-title">Te amo, mi amor</h2>
+        <p class="subtitle">Mi amor, quiero que sepas algo que quizás ya te he dicho muchas veces, pero siento que nunca está de más decirlo: te amo muchísimo.</p>
+        <p class="subtitle">Te amo más de lo que a veces sé explicar con palabras y, aunque quizás no siempre sepa demostrarlo de la mejor manera, lo que siento por ti es completamente real.</p>
+
+        <p class="subtitle">Sé que las cosas entre nosotros no han estado bien y sé que hemos pasado por momentos difíciles, momentos en los que quizás los dos hemos terminado lastimados, enojados o decepcionados.</p>
+        <p class="subtitle">Pero a pesar de todo eso, yo sigo aquí, porque no quiero rendirme contigo ni con lo que tenemos. No quiero que todos los momentos bonitos que hemos vivido terminen siendo solamente recuerdos.</p>
+        <p class="subtitle">Quiero que podamos arreglar las cosas, hablar tranquilos, entendernos y poco a poco volver a sentirnos bien juntos.</p>
+        <p class="subtitle">Yo no quiero arreglarlo todo solamente porque tenga miedo de perderte. Quiero hacerlo porque realmente te amo y porque para mí nuestra relación importa muchísimo.</p>
+        <p class="subtitle">Me importas tú, me importa cómo te sientes, me importa lo que piensas y me importa que puedas sentirte tranquila, querida y segura conmigo.</p>
+
+        <!-- Foto 2 -->
+        <div class="credits-photo" id="photo-frame-2">
+          <img src="fotos/2.jpeg" alt="Nosotros" class="credits-photo-img">
+          <div class="photo-placeholder-credits"><span>Coloca una foto en la carpeta fotos/</span></div>
+        </div>
+
+        <p class="subtitle">Sé que quizás he cometido errores y sé que no soy perfecto. Hay cosas que pude haber hecho mejor, palabras que pude haber dicho de otra manera y momentos en los que quizás no supe cómo actuar.</p>
+        <p class="subtitle">Y de verdad quiero aprender de todo eso. No quiero simplemente decirte "perdón" y que después todo siga igual.</p>
+
+        <!-- Foto 3 -->
+        <div class="credits-photo" id="photo-frame-3">
+          <img src="fotos/3.jpeg" alt="Nosotros" class="credits-photo-img">
+          <div class="photo-placeholder-credits"><span>Coloca una foto en la carpeta fotos/</span></div>
+        </div>
+
+        <p class="subtitle">Quiero demostrarte con mis acciones que puedo mejorar, que puedo escucharte más, entenderte más y cuidar mucho más nuestra relación.</p>
+        <p class="subtitle">Quiero que podamos dejar atrás todo aquello que nos hizo daño, no para olvidar lo que pasó, sino para aprender de ello y no volver a cometer los mismos errores.</p>
+        <p class="subtitle">Quiero que cuando tengamos un problema podamos hablarlo sin lastimarnos, que podamos decirnos lo que sentimos sin miedo y que podamos buscar juntos una solución.</p>
+        <p class="subtitle">Porque yo todavía quiero muchas cosas contigo. Quiero seguir compartiendo momentos contigo, quiero seguir riéndome contigo, quiero seguir molestándote, cuidándote, apoyándote y estando para ti cuando necesites a alguien.</p>
+
+        <!-- Foto 4 -->
+        <div class="credits-photo" id="photo-frame-4">
+          <img src="fotos/4.jpeg" alt="Nosotros" class="credits-photo-img">
+          <div class="photo-placeholder-credits"><span>Coloca una foto en la carpeta fotos/</span></div>
+        </div>
+
+        <p class="subtitle">Quiero esos momentos simples que quizás parecen pequeños, pero que para mí significan muchísimo cuando estoy contigo.</p>
+        <p class="subtitle">Y sobre todo quiero que sepas que no quiero perderte. No quiero que un mal momento, una discusión o nuestros errores hagan que olvidemos todo lo que sentimos.</p>
+        <p class="subtitle">Yo todavía veo a esa persona de la que me enamoré y sigo sintiendo muchísimo por ti.</p>
+
+        <!-- Foto 5 -->
+        <div class="credits-photo" id="photo-frame-5">
+          <img src="fotos/5.jpeg" alt="Nosotros" class="credits-photo-img">
+          <div class="photo-placeholder-credits"><span>Coloca una foto en la carpeta fotos/</span></div>
+        </div>
+
+        <p class="subtitle">No te estoy diciendo todo esto para presionarte ni para obligarte a que las cosas se solucionen de un día para otro.</p>
+        <p class="subtitle">Entiendo si necesitas tiempo, entiendo si estás lastimada y entiendo que quizás ahora mismo no sea fácil volver a estar como antes.</p>
+        <p class="subtitle">Solo quiero que sepas que yo estoy dispuesto a poner de mi parte, a esperar lo necesario y a hacer las cosas bien.</p>
+        <p class="subtitle">Te amo muchísimo, mi amor. Y si todavía existe una oportunidad para nosotros, yo quiero aprovecharla.</p>
+        <p class="subtitle">Quiero que podamos reconstruir poco a poco lo que se haya roto, con paciencia, con sinceridad y con mucho amor.</p>
+
+        <!-- Foto 6 -->
+        <div class="credits-photo" id="photo-frame-6">
+          <img src="fotos/6.jpeg" alt="Nosotros" class="credits-photo-img">
+          <div class="photo-placeholder-credits"><span>Coloca una foto en la carpeta fotos/</span></div>
+        </div>
+
+        <p class="subtitle">No quiero prometerte que nunca vamos a volver a tener problemas, porque sé que eso sería imposible.</p>
+        <p class="subtitle">Lo que sí puedo prometerte es que quiero aprender a enfrentar esos problemas contigo y no contra ti.</p>
+        <p class="subtitle">Quiero que seamos un equipo, que cuando algo esté mal podamos solucionarlo juntos y que nunca olvidemos por qué decidimos estar juntos.</p>
+        <p class="subtitle">Te amo por todo lo que eres, por tu forma de ser, por los momentos que hemos compartido y por todo lo que haces sentir en mí.</p>
+        <p class="subtitle">Y aunque ahora las cosas no estén perfectas, mis sentimientos por ti siguen estando ahí.</p>
+
+        <!-- Foto 7 -->
+        <div class="credits-photo" id="photo-frame-7">
+          <img src="fotos/7.jpeg" alt="Nosotros" class="credits-photo-img">
+          <div class="photo-placeholder-credits"><span>Coloca una foto en la carpeta fotos/</span></div>
+        </div>
+
+        <p class="subtitle">De verdad quiero arreglarlo todo. Quiero recuperar nuestra tranquilidad, nuestra confianza y esa conexión tan bonita que tenemos.</p>
+        <p class="subtitle">Quiero volver a verte feliz conmigo y también quiero sentir que los dos podemos estar bien, sin estar constantemente lastimándonos.</p>
+        <p class="subtitle">Si alguna vez dudas de lo mucho que te amo, quiero que recuerdes esto: yo sigo aquí porque tú me importas muchísimo. Porque te amo. Porque no quiero rendirme.</p>
+        <p class="subtitle">Porque todavía creo en nosotros y porque, a pesar de todo lo que haya pasado, mi corazón todavía te elige a ti.</p>
+        <p class="subtitle">Solo espero que algún día podamos mirar atrás y decir que todo esto que estamos pasando no fue el final, sino una etapa que nos enseñó a querernos mejor, a entendernos más y a valorar mucho más lo que tenemos.</p>
+        <p class="subtitle subtitle-end">Te amo, mi amor. Muchísimo. Y lo único que quiero es que podamos estar bien, que podamos sanar todo lo que nos hemos hecho y que, si los dos queremos, podamos volver a construir nuestra relación poquito a poquito. Yo quiero hacerlo contigo. ❤️</p>
+      </div>
+    </div>
+    <button type="button" class="replay" id="replay" hidden>Ver de nuevo</button>
+  </section>
+
+  <script src="js/pin.js?v=10"></script>
+</body>
+</html>
